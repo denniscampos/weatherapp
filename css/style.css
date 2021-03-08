@@ -1,0 +1,41 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.main_container {
+  margin: auto;
+  width: 50%; 
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  /* text-align: center; */
+}
+
+.temp_info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.daily_temps {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+span {
+  font-size: large;
+}
