@@ -6,6 +6,7 @@
 *{
   box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
+  /* outline: 1px solid; */
 }
 
 /******************************************
@@ -29,7 +30,12 @@
 .daily_temps {
   display: flex;
   flex-direction: column;
+  /* align-content: space-between; */
+}
 
+.high_text,
+.low_text {
+  display: flex;
 }
 
 /******************************************

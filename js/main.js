@@ -4,58 +4,47 @@ document.querySelector('button').addEventListener('click', weatherApp)
 function weatherApp() {
 
 let location = document.querySelector('input').value    
-// let apiKey = "d378d571a8782ce4c09bd37fac163ff9"
-let url = "https://api.openweathermap.org/data/2.5/weather?q="+location +"&units=imperial" +"&appid=d378d571a8782ce4c09bd37fac163ff9"
-// onecall API - this is to get the daily weather. Double check the lang and lon
-let url2 = "https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&appid=d378d571a8782ce4c09bd37fac163ff9"
-
+let apiKey = "5e7a7eade1f8481381997a34477bd35c"
+let url = "https://api.weatherbit.io/v2.0/forecast/daily?city="+location +"&units=I" +"&key="+apiKey
 
 fetch(url) 
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        // document.querySelector('h2').innerText = data.main.temp
+        // // document.querySelector('h2').innerText = data.main.temp
+
         //City, State, Country or Zip code
-        document.querySelector('#city_print').innerText = data.name;
-        // Temperatures High and Low
-        document.querySelector('.high_temp').innerText = Math.round(data.main.temp_max) + " F"
-        document.querySelector('.low_temp').innerText = Math.round(data.main.temp_min) + " F"
+        document.querySelector('#city_print').innerText = data.city_name;
 
-        // we have a feels liek data ex. data.main.feels_like
-        //check temperature
-        document.querySelector('#tempCheck').innerHTML = Math.round(data.main.temp) + " F"
-        // check feels like
-        document.querySelector('#feelsLike').innerHTML = Math.round(data.main.feels_like) + " F"
-        // check humidity 
-        document.querySelector('#humidity').innerHTML = data.main.humidity + " %"
-        // check wind
-        document.querySelector('#windSpeed').innerText = data.wind.speed + " MPH"
-        // check description
-        document.querySelector('#weatherDescription').innerHTML = data.weather[0].description.toUpperCase()
-        // print weather pic
-        const weatherPic = data.weather[0].icon
-        document.querySelector('.test1').src = "http://openweathermap.org/img/wn/"+weatherPic +"@2x.png"
-        // print weathear when information is first grabbed
-        document.querySelector('.temp_pic').src = "http://openweathermap.org/img/wn/"+weatherPic +"@2x.png"
+        // Current temperature
+        document.querySelector('.current_temp').innerText = Math.round(data.data[0].temp) + " F"
+
+        // Current Temperature Picture
+        const weatherPic = data.data[0].weather.icon
+        document.querySelector('.temp_pic').src = "https://www.weatherbit.io/static/img/icons/"+weatherPic +".png"
+
+        // // Temperatures High and Low
+        document.querySelector('.high_temp').innerText = Math.round(data.data[0].high_temp) + " F"
+        document.querySelector('.low_temp').innerText = Math.round(data.data[0].low_temp) + " F"
+
+
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+        const weeks = document.querySelector('.daily_temps');
+        for (let i = 0; i < 6; i++) {
+            const testDay = data.data[i].datetime
+            const daysNum = new Date(testDay).getDay()
+            let myDiv = document.createElement('div')
+            myDiv.innerHTML = days[daysNum]
+            weeks.append(myDiv)
+        }
+
     })
-    fetch(url2)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            console.log(data.daily.dt)
-            console.log(data.daily[1])
-            console.log(data.daily[2])
-
-        })
     .catch(err => {
         console.log(`error ${err}`)
     })
 
 }
-
-// look into weatherbit api
-
-
 
 
 
