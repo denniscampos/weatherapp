@@ -56,7 +56,9 @@ button {
   color: rgb(104, 103, 103); 
 }
 
-
+/******************************************
+/* MAIN CONTAINER LAYOUT
+/*******************************************/
 
 .main_container {
   background-image: linear-gradient(#67667D, #6A7FBB);
@@ -74,36 +76,49 @@ button {
   padding: 50px 0;
 }
 
-
-/* .main_container {
-  margin: auto;
-  width: 50%; 
-  padding: 10px;
-  border: 2px solid black;
-  border-radius: 10px;
-  text-align: center;
+/******************************************
+/* WEATHER FORECAST LAYOUT
+/*******************************************/
+h3 {
+  padding: 60px 0;
+  font-size: 2rem;
 }
 
-.temp_info {
-  display: flex;
-  justify-content: space-between;
-}
-
-.daily_temps {
+ul {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  flex-wrap: wrap;
 }
 
-.high_text,
-.low_text {
-  display: flex;
-} */
+li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 40px 12px;
+  background: rgba(70, 69, 70, 0.192);
+  border-radius: 5px;
+}
+
+li:hover, 
+li:focus {
+  background-color: rgba(143, 143, 143, 0.349);
+  color: #222831;
+  transform: scale(1.03);
+  transition: background-color 150ms, color 150ms, transform 150ms;
+}
+
+.weather_forecast {
+  padding: 50px;
+  background-image: linear-gradient(#28313F, #283A44);
+}
+
+.weather_float {
+  float: right; 
+}
+
+
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 
-/* span {
-  font-size: large;
-} */
+
