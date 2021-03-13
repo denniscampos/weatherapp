@@ -36,6 +36,7 @@ span {
 }
 
 input {
+  width: 210px; 
   padding: 10px 5px; 
   border: none;
   border-radius: 5px;
@@ -76,6 +77,10 @@ button {
   padding: 50px 0;
 }
 
+.todays_day {
+  font-size: 2.8rem;
+}
+
 /******************************************
 /* WEATHER FORECAST LAYOUT
 /*******************************************/
@@ -91,9 +96,13 @@ ul {
 }
 
 li {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   list-style: none;
   margin-bottom: 10px;
-  padding: 40px 12px;
+  padding: 20px 12px;
   background: rgba(70, 69, 70, 0.192);
   border-radius: 5px;
 }
@@ -112,9 +121,25 @@ li:focus {
 }
 
 .weather_float {
-  float: right; 
+  /* float: right;  */
 }
 
+.weather_temp {
+  margin-left: 15px;
+}
+
+.forecast_img {
+  height: 100%; 
+  width: auto;
+  
+}
+
+.weather_contents {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  
+}
 
 
 /******************************************
