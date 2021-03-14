@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
-    	<meta name="keywords" content="one, two, three">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is where your description goes" />
+    <meta name="keywords" content="one, two, three" />
 
-		<title>Weather App</title>
+    <title>Weather App</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main_container">
+      <nav>
+        <div class="row">
+          <h1 class="todays_day">Day</h1>
+          <div>
+            <input
+              type="Enter Location"
+              placeholder="Enter City, State or Zip Code"
+            />
+            <button type="submit">Search</button>
+          </div>
+        </div>
+        <div>
+          <span class="date_format">Date</span>
+        </div>
+        <div>
+          <span class="get_location">Location</span>
+        </div>
+      </nav>
+      <main>
+        <h2 class="current_temp">50 F</h2>
+        <div class="row main_border">
+          <span>Feels Like</span>
+          <span class="print">65 F</span>
+        </div>
+        <div class="row main_border">
+          <span>Humidity</span>
+          <span class="print_humidity">60%</span>
+        </div>
+        <div class="row main_border">
+          <span>Wind</span>
+          <span class="print_wind">13.8 m/s</span>
+        </div>
+      </main>
+    </div>
+    <section class="weather_forecast">
+      <h3>WEATHER FORECAST (16-DAY FORECAST)</h3>
+      <ul>
+        <!-- <li class="weather_print">
+          <div class="weather_contents">
+            <img src="" alt="" class="forecast_img" />
+            <span class="weather_temp"></span>
+          </div>
+          <div class="weather_float">
+            <span class="weather_time"></span>
+            <span class="weather_day"></span>
+          </div>
+        </li> -->
+      </ul>
+    </section>
 
-		<!-- external CSS link -->
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="main_container">
-<nav>
-	<div class="row">
-	<h1 class="todays_day">whatDay</h1>
-	<div>
-	<input type="Enter Location" placeholder="Enter City, State or Zip Code">
-	<button type="submit">Search</button>
-</div>
-</div>
-<div> 
-	<span class="date_format">Date Format</span>
-</div>
-<div>
-	<span class="get_location">Location</span>
-</div>
-</nav>
-<main>
-	<h2 class="current_temp">50 F</h2>
-	<div class="row main_border">
-		<span>Feels Like</span>
-		<span class="print">65 F</span>
-	</div>
-	<div class="row main_border">
-		<span >Humidity</span>
-		<span class="print_humidity">60%</span>
-	</div>
-	<div class="row main_border">
-		<span >Wind</span>
-		<span class="print_wind">13.8 m/s</span>
-	</div>
-</main>
-</div>
-<section class="weather_forecast">
-	<h3>WEATHER FORECAST</h3>
-	<ul>
-		<li class="weather_print">
-			<div class="weather_contents">
-			<img src="" alt="" class="forecast_img">
-			<span class="weather_temp">70 F</span> 
-			</div>
-			<div class="weather_float">
-			<span class="weather_time">timeStamp</span> 
-			<span class="weather_day">currentDay</span>
-			</div>
-		</li>
-	</ul>
-
-</section>
-
-	<script type="text/javascript" src="js/main.js"></script>
-</body>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
 </html>
-
