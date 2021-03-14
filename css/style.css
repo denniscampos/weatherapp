@@ -68,6 +68,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .main_border {
@@ -96,6 +97,7 @@ ul {
 li {
   height: 100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   list-style: none;
@@ -130,6 +132,7 @@ li:focus {
 
 .weather_contents {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   height: 60px;
 }
