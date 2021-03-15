@@ -38,12 +38,12 @@ function weatherApp() {
       document.querySelector(".get_location").innerText = data.city_name;
 
       // Current temperature
-      document.querySelector(".current_temp").innerText =
-        Math.round(data.data[0].temp) + " F";
+      document.querySelector(".current_temp").innerHTML =
+        Math.round(data.data[0].temp) + " &#8457;";
 
       // Feels like -- create an average from max and min
-      document.querySelector(".print").innerText =
-        Math.round(data.data[0].app_max_temp) + " F";
+      document.querySelector(".print").innerHTML =
+        Math.round(data.data[0].app_max_temp) + " &#8457;";
 
       // Humidity
       document.querySelector(".print_humidity").innerText =
@@ -55,6 +55,7 @@ function weatherApp() {
 
       // WEATHER FORECAST
       const getUl = document.querySelector("ul");
+      getUl.innerHTML = "" // Allows to reset if user searches for a new location
       for (let i = 0; i < data.data.length; i++) {
         const printDay = new Date(data.data[i].datetime);
         const workPls = printDay.getDay();
