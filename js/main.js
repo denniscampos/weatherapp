@@ -4,7 +4,7 @@ const apiKey = "5e7a7eade1f8481381997a34477bd35c";
 
 function weatherApp() {
   const location = document.querySelector("input").value.toLowerCase();
-  
+
   const url =
     "https://api.weatherbit.io/v2.0/forecast/daily?city=" +
     location +
@@ -55,10 +55,10 @@ function weatherApp() {
 
       // WEATHER FORECAST
       const getUl = document.querySelector("ul");
-      getUl.innerHTML = "" // Allows to reset if user searches for a new location
+      getUl.innerHTML = ""; // Allows to reset if user searches for a new location
       for (let i = 0; i < data.data.length; i++) {
         const printDay = new Date(data.data[i].datetime);
-        const workPls = printDay.getDay();
+        const time = printDay.getDay();
         getUl.innerHTML += `<li class="weather_print">
                             <div class="weather_contents">
                                 <img src=https://www.weatherbit.io/static/img/icons/${
@@ -70,9 +70,7 @@ function weatherApp() {
                                     }</span>
                             </div>
                             <div class="weather_float">
-                                <span class="weather_time">${
-                                  days[workPls]
-                                }</span>
+                                <span class="weather_time">${days[time]}</span>
                                 <span class="weather_day">${
                                   data.data[i].datetime
                                 }</span>
@@ -85,34 +83,3 @@ function weatherApp() {
       console.log(`error ${err}`);
     });
 }
-
-
-
-// const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-// const weeks = document.querySelector('.daily_temps');
-// for (let i = 0; i < 6; i++) {
-//     const testDay = data.data[i].datetime
-//     const daysNum = new Date(testDay).getDay()
-//     let myDiv = document.createElement('div')
-//     myDiv.innerHTML = days[daysNum]
-//     weeks.append(myDiv)
-// }
-
-//  *
-//  * Source:
-//  * https://developer.mozilla.org/fr/docs/Web/API/Document/createElement
-//  * https://developer.mozilla.org/en-US/docs/Web/API/Element/className
-//  * https://developer.mozilla.org/fr/docs/Web/API/ParentNode/append (ctrl (for windows)+ click pen link normally)
-//  *
-//  */
-
-//   const weatherInfo = document.querySelector("ul");
-//   for (let i = 0; i < data.data.length; i++) {
-//     const getDay = document.createElement("li");
-//     const getImg = document.createElement("img");
-//     getImg.className = "weather_print";
-//     getImg.src = `https://www.weatherbit.io/static/img/icons/${data.data[i].weather.icon}.png`;
-//     getDay.append(getImg);
-//     weatherInfo.append(getDay);
-//   }
